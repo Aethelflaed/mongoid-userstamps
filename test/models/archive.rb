@@ -4,4 +4,3 @@ class Archive
 
   field :content
 end
-

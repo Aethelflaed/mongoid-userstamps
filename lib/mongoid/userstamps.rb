@@ -1,13 +1,11 @@
-# -*- encoding : utf-8 -*-
-
-require 'mongoid/userstamps/version'
-require 'mongoid/userstamps/config'
-require 'mongoid/userstamps/user'
-require 'mongoid/userstamps/model'
-require 'mongoid/userstamps/created'
-require 'mongoid/userstamps/updated'
-require 'mongoid/userstamps/deleted'
-require 'mongoid/userstamps/railtie' if defined? Rails
+require "mongoid/userstamps/version"
+require "mongoid/userstamps/config"
+require "mongoid/userstamps/user"
+require "mongoid/userstamps/model"
+require "mongoid/userstamps/created"
+require "mongoid/userstamps/updated"
+require "mongoid/userstamps/deleted"
+require "mongoid/userstamps/railtie" if defined? Rails
 
 module Mongoid
   module Userstamps
@@ -27,4 +25,3 @@ module Mongoid
     end
   end
 end
-

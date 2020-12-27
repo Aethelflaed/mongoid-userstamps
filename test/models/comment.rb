@@ -5,6 +5,5 @@ class Comment
 
   field :content
 
-  userstamps_model.user_model = 'Person'
+  userstamps_model.user_model = "Person"
 end
-

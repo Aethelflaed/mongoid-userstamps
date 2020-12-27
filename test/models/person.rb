@@ -4,4 +4,3 @@ class Person
 
   field :name
 end
-

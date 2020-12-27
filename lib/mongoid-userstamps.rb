@@ -1,4 +1,1 @@
-# -*- encoding : utf-8 -*-
-
-require 'mongoid/userstamps'
-
+require "mongoid/userstamps"

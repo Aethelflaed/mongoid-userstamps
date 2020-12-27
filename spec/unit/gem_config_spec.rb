@@ -1,24 +1,21 @@
-# -*- encoding : utf-8 -*-
-require 'spec_helper'
+require "spec_helper"
 
 describe Mongoid::Userstamp::GemConfig do
-
   subject { Mongoid::Userstamp::GemConfig.new }
 
-  describe '#initialize' do
-
-    context 'without block' do
+  describe "#initialize" do
+    context "without block" do
       it { should be_a Mongoid::Userstamp::GemConfig }
       it { subject.created_name.should eq :created_by }
       it { subject.updated_name.should eq :updated_by }
       it { subject.user_reader.should eq :current_user }
     end
 
-    context 'with block' do
+    context "with block" do
       subject do
         Mongoid::Userstamp::GemConfig.new do |u|
-          u.created_name  = :c_by
-          u.updated_name  = :u_by
+          u.created_name = :c_by
+          u.updated_name = :u_by
           u.user_reader = :foo
         end
       end
@@ -30,7 +27,7 @@ describe Mongoid::Userstamp::GemConfig do
     end
   end
 
-  describe 'deprecated methods' do
+  describe "deprecated methods" do
     subject do
       Mongoid::Userstamp::GemConfig.new do |u|
         u.user_model = :bar
@@ -38,7 +35,7 @@ describe Mongoid::Userstamp::GemConfig do
         u.updated_column = :baz
       end
     end
-    it { ->{ subject }.should_not raise_error }
+    it { -> { subject }.should_not raise_error }
     it { should be_a Mongoid::Userstamp::GemConfig }
     it { subject.created_name.should eq :bing }
     it { subject.updated_name.should eq :baz }

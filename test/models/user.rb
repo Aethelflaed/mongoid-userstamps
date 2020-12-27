@@ -6,4 +6,3 @@ class User
 
   userstamps_user.reader = :current_admin
 end
-

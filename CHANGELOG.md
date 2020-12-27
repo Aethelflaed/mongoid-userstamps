@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.2.0
+
+* Mongoid 7.0 support
+
 ## 3.1.3
 
 * Mongoid 6.2 support

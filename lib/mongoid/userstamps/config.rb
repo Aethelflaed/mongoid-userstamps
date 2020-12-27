@@ -1,7 +1,5 @@
-# -*- encoding : utf-8 -*-
-
-require 'mongoid/userstamps/config/model'
-require 'mongoid/userstamps/config/user'
+require "mongoid/userstamps/config/model"
+require "mongoid/userstamps/config/user"
 
 module Mongoid
   module Userstamps
@@ -30,23 +28,20 @@ module Mongoid
           model_classes << klass
         end
 
-        def created_name=(value)
-          @created_name = value
-        end
+        attr_writer :created_name
+
         def created_name
           @created_name ||= DEFAULT_CREATED_NAME
         end
 
-        def updated_name=(value)
-          @updated_name = value
-        end
+        attr_writer :updated_name
+
         def updated_name
           @updated_name ||= DEFAULT_UPDATED_NAME
         end
 
-        def deleted_name=(value)
-          @deleted_name = value
-        end
+        attr_writer :deleted_name
+
         def deleted_name
           @deleted_name ||= DEFAULT_DELETED_NAME
         end
@@ -60,7 +55,7 @@ module Mongoid
         end
 
         def store(model, value = false)
-          return if !model
+          return unless model
           key = "mongoid-userstamps/#{model.to_s.underscore}".to_sym
           store = defined?(RequestStore) ? RequestStore.store : Thread.current
           if value == false

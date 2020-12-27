@@ -1,5 +1,3 @@
-# -*- encoding : utf-8 -*-
-
 module Mongoid
   module Userstamps
     module Config
@@ -13,4 +11,3 @@ module Mongoid
     end
   end
 end
-

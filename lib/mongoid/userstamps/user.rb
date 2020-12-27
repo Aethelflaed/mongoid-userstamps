@@ -1,4 +1,3 @@
-# -*- encoding : utf-8 -*-
 module Mongoid
   module Userstamps
     module User
@@ -9,7 +8,7 @@ module Mongoid
       end
 
       def current?
-        self.id == self.class.current.try(:id)
+        id == self.class.current.try(:id)
       end
 
       class_methods do
@@ -22,7 +21,7 @@ module Mongoid
         end
 
         def sudo(user)
-          old = self.current
+          old = current
           self.current = user
           yield
         ensure
@@ -36,4 +35,3 @@ module Mongoid
     end
   end
 end
-
